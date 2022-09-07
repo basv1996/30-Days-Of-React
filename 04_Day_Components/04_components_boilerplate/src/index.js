@@ -2,6 +2,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import asabenehImage from './images/asabeneh.jpg'
+import cssLogo from './images/css_logo.png'
+import htmlLogo from './images/html_logo.png'
+import jsLogo from './images/js_logo.png'
+import reactLogo from './images/react_logo.png'
 
 const hexaColor = () => {
   let str = '0123456789abcdef'
@@ -16,6 +20,7 @@ const hexaColor = () => {
 const HexaColor = () => {
   const bgColor = hexaColor()
   const styles = {
+    backgroundColor: bgColor,
     height: '100px',
     display: 'flex',
     'justify-content': 'center',
@@ -31,6 +36,21 @@ const HexaColor = () => {
       <h2>{bgColor}</h2>
     </div>
   )
+}
+
+const FrontEndTechstyles = {
+  backgroundColor: '#eee',
+  textAlign: 'center',
+  padding: '20'
+}
+
+const frontEndTechListStyles = {
+  display: 'flex',
+  flewWrap: 'wrap'
+}
+
+const imageStyles = {
+  width: '100%'
 }
 
 // Header Component
@@ -51,6 +71,20 @@ const UserCard = () => (
   <div className='user-card'>
     <img src={asabenehImage} alt='asabeneh image' />
     <h2>Asabeneh Yetayeh</h2>
+  </div>
+)
+
+// technologies component
+const FrontEndTech = () => (
+  <div className='frontEndTech' style={FrontEndTechstyles}>
+    <h3>Front end technologies</h3>
+    <ul style={frontEndTechListStyles}>
+      <li><img style={imageStyles} src={cssLogo} alt='css logo'></img></li>
+      <li><img style={imageStyles} src={htmlLogo} alt='html logo'></img></li>
+      <li><img style={imageStyles} src={jsLogo} alt='js logo'></img></li>
+      <li><img style={imageStyles} src={reactLogo} alt='reactlogo'></img></li>
+    </ul>
+
   </div>
 )
 
@@ -77,9 +111,12 @@ const Main = () => (
       <ul>
         <TechList />
       </ul>
+      <FrontEndTech />
       <UserCard />
       <div>
         {/* Generate two different hexa colors every time */}
+        <HexaColor />
+        <HexaColor />
         <HexaColor />
         <HexaColor />
       </div>
